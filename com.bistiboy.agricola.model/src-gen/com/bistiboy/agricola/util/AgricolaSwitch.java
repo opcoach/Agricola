@@ -78,6 +78,62 @@ public class AgricolaSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case MAgricolaPackage.GAMER: {
+				MGamer gamer = (MGamer)theEObject;
+				T result = caseGamer(gamer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MAgricolaPackage.AGRICOLA: {
+				MAgricola agricola = (MAgricola)theEObject;
+				T result = caseAgricola(agricola);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MAgricolaPackage.ACTION_CARD: {
+				MActionCard actionCard = (MActionCard)theEObject;
+				T result = caseActionCard(actionCard);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MAgricolaPackage.SUPPLIER_CARD: {
+				MSupplierCard supplierCard = (MSupplierCard)theEObject;
+				T result = caseSupplierCard(supplierCard);
+				if (result == null) result = caseActionCard(supplierCard);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MAgricolaPackage.CREATION_CARD: {
+				MCreationCard creationCard = (MCreationCard)theEObject;
+				T result = caseCreationCard(creationCard);
+				if (result == null) result = caseActionCard(creationCard);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MAgricolaPackage.SUPPLY: {
+				MSupply supply = (MSupply)theEObject;
+				T result = caseSupply(supply);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MAgricolaPackage.CREATION: {
+				MCreation creation = (MCreation)theEObject;
+				T result = caseCreation(creation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MAgricolaPackage.MAIN_BOARD: {
+				MMainBoard mainBoard = (MMainBoard)theEObject;
+				T result = caseMainBoard(mainBoard);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MAgricolaPackage.ROUND: {
+				MRound round = (MRound)theEObject;
+				T result = caseRound(round);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -109,6 +165,141 @@ public class AgricolaSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseParcel(MParcel object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Gamer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Gamer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGamer(MGamer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Agricola</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Agricola</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAgricola(MAgricola object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Action Card</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Action Card</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseActionCard(MActionCard object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Supplier Card</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Supplier Card</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSupplierCard(MSupplierCard object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Creation Card</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Creation Card</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCreationCard(MCreationCard object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Supply</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Supply</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSupply(MSupply object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Creation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Creation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCreation(MCreation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Main Board</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Main Board</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMainBoard(MMainBoard object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Round</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Round</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRound(MRound object) {
 		return null;
 	}
 

@@ -4,6 +4,14 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import com.bistiboy.agricola.GamerBoard;
 import com.bistiboy.agricola.Parcel;
+import com.bistiboy.agricola.Gamer;
+import com.bistiboy.agricola.Agricola;
+import com.bistiboy.agricola.SupplierCard;
+import com.bistiboy.agricola.CreationCard;
+import com.bistiboy.agricola.Supply;
+import com.bistiboy.agricola.Creation;
+import com.bistiboy.agricola.MainBoard;
+import com.bistiboy.agricola.Round;
 import com.bistiboy.agricola.AgricolaFactory;
 
 
@@ -32,6 +40,46 @@ public class AgricolaFactoryImpl extends MAgricolaFactoryImpl implements Agricol
 	public Parcel createParcel()
 	{
 		Parcel result = new ParcelImpl();
+		return result;
+	}
+	public Gamer createGamer()
+	{
+		Gamer result = new GamerImpl();
+		return result;
+	}
+	public Agricola createAgricola()
+	{
+		Agricola result = new AgricolaImpl();
+		return result;
+	}
+	public SupplierCard createSupplierCard()
+	{
+		SupplierCard result = new SupplierCardImpl();
+		return result;
+	}
+	public CreationCard createCreationCard()
+	{
+		CreationCard result = new CreationCardImpl();
+		return result;
+	}
+	public Supply createSupply()
+	{
+		Supply result = new SupplyImpl();
+		return result;
+	}
+	public Creation createCreation()
+	{
+		Creation result = new CreationImpl();
+		return result;
+	}
+	public MainBoard createMainBoard()
+	{
+		MainBoard result = new MainBoardImpl();
+		return result;
+	}
+	public Round createRound()
+	{
+		Round result = new RoundImpl();
 		return result;
 	}
 }

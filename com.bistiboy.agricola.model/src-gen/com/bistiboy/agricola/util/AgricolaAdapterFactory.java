@@ -76,6 +76,42 @@ public class AgricolaAdapterFactory extends AdapterFactoryImpl {
 				return createParcelAdapter();
 			}
 			@Override
+			public Adapter caseGamer(MGamer object) {
+				return createGamerAdapter();
+			}
+			@Override
+			public Adapter caseAgricola(MAgricola object) {
+				return createAgricolaAdapter();
+			}
+			@Override
+			public Adapter caseActionCard(MActionCard object) {
+				return createActionCardAdapter();
+			}
+			@Override
+			public Adapter caseSupplierCard(MSupplierCard object) {
+				return createSupplierCardAdapter();
+			}
+			@Override
+			public Adapter caseCreationCard(MCreationCard object) {
+				return createCreationCardAdapter();
+			}
+			@Override
+			public Adapter caseSupply(MSupply object) {
+				return createSupplyAdapter();
+			}
+			@Override
+			public Adapter caseCreation(MCreation object) {
+				return createCreationAdapter();
+			}
+			@Override
+			public Adapter caseMainBoard(MMainBoard object) {
+				return createMainBoardAdapter();
+			}
+			@Override
+			public Adapter caseRound(MRound object) {
+				return createRoundAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -120,6 +156,132 @@ public class AgricolaAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createParcelAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.bistiboy.agricola.MGamer <em>Gamer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.bistiboy.agricola.MGamer
+	 * @generated
+	 */
+	public Adapter createGamerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.bistiboy.agricola.MAgricola <em>Agricola</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.bistiboy.agricola.MAgricola
+	 * @generated
+	 */
+	public Adapter createAgricolaAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.bistiboy.agricola.MActionCard <em>Action Card</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.bistiboy.agricola.MActionCard
+	 * @generated
+	 */
+	public Adapter createActionCardAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.bistiboy.agricola.MSupplierCard <em>Supplier Card</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.bistiboy.agricola.MSupplierCard
+	 * @generated
+	 */
+	public Adapter createSupplierCardAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.bistiboy.agricola.MCreationCard <em>Creation Card</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.bistiboy.agricola.MCreationCard
+	 * @generated
+	 */
+	public Adapter createCreationCardAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.bistiboy.agricola.MSupply <em>Supply</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.bistiboy.agricola.MSupply
+	 * @generated
+	 */
+	public Adapter createSupplyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.bistiboy.agricola.MCreation <em>Creation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.bistiboy.agricola.MCreation
+	 * @generated
+	 */
+	public Adapter createCreationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.bistiboy.agricola.MMainBoard <em>Main Board</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.bistiboy.agricola.MMainBoard
+	 * @generated
+	 */
+	public Adapter createMainBoardAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.bistiboy.agricola.MRound <em>Round</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.bistiboy.agricola.MRound
+	 * @generated
+	 */
+	public Adapter createRoundAdapter() {
 		return null;
 	}
 

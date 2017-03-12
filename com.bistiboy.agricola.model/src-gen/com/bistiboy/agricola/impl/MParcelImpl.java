@@ -2,6 +2,7 @@
  */
 package com.bistiboy.agricola.impl;
 
+import com.bistiboy.agricola.AgricolaPackage;
 import com.bistiboy.agricola.MAgricolaPackage;
 import com.bistiboy.agricola.Parcel;
 import com.bistiboy.agricola.ParcelType;

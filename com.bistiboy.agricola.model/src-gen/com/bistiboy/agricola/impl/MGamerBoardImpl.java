@@ -4,6 +4,7 @@ package com.bistiboy.agricola.impl;
 
 import com.bistiboy.agricola.MAgricolaPackage;
 import com.bistiboy.agricola.GamerBoard;
+import com.bistiboy.agricola.AgricolaPackage;
 import com.bistiboy.agricola.Parcel;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
@@ -66,7 +67,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 	 */
 	public EList<Parcel> getParcels() {
 		if (parcels == null) {
-			parcels = new EObjectContainmentEList<Parcel>(Parcel.class, this, MAgricolaPackage.GAMER_BOARD__PARCELS);
+			parcels = new EObjectContainmentEList<Parcel>(Parcel.class, this, AgricolaPackage.GAMER_BOARD__PARCELS);
 		}
 		return parcels;
 	}

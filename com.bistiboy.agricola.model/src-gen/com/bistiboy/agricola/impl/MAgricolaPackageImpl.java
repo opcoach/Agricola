@@ -2,12 +2,22 @@
  */
 package com.bistiboy.agricola.impl;
 
+import com.bistiboy.agricola.MActionCard;
+import com.bistiboy.agricola.MAgricola;
 import com.bistiboy.agricola.MAgricolaFactory;
 import com.bistiboy.agricola.MAgricolaPackage;
+import com.bistiboy.agricola.MCreation;
+import com.bistiboy.agricola.MCreationCard;
+import com.bistiboy.agricola.MGamer;
 import com.bistiboy.agricola.MGamerBoard;
+import com.bistiboy.agricola.MMainBoard;
 import com.bistiboy.agricola.MParcel;
+import com.bistiboy.agricola.MRound;
+import com.bistiboy.agricola.MSupplierCard;
+import com.bistiboy.agricola.MSupply;
 import com.bistiboy.agricola.ParcelType;
 
+import com.bistiboy.agricola.Resource;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -45,7 +55,77 @@ public class MAgricolaPackageImpl extends EPackageImpl implements MAgricolaPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass gamerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass agricolaEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass actionCardEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass supplierCardEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass creationCardEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass supplyEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass creationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mainBoardEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass roundEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum parcelTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum resourceEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -179,8 +259,260 @@ public class MAgricolaPackageImpl extends EPackageImpl implements MAgricolaPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getGamer() {
+		return gamerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGamer_Name() {
+		return (EAttribute)gamerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGamer_Gamerboard() {
+		return (EReference)gamerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAgricola() {
+		return agricolaEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAgricola_Gamers() {
+		return (EReference)agricolaEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAgricola_Cards() {
+		return (EReference)agricolaEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAgricola_Mainboard() {
+		return (EReference)agricolaEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getActionCard() {
+		return actionCardEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getActionCard_Name() {
+		return (EAttribute)actionCardEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSupplierCard() {
+		return supplierCardEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSupplierCard_Supply() {
+		return (EReference)supplierCardEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSupplierCard_BankSupply() {
+		return (EReference)supplierCardEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCreationCard() {
+		return creationCardEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCreationCard_Creations() {
+		return (EReference)creationCardEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCreationCard_Unique() {
+		return (EAttribute)creationCardEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSupply() {
+		return supplyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSupply_Quantity() {
+		return (EAttribute)supplyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSupply_ResourceType() {
+		return (EAttribute)supplyEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCreation() {
+		return creationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCreation_Name() {
+		return (EAttribute)creationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCreation_Cost() {
+		return (EReference)creationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMainBoard() {
+		return mainBoardEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMainBoard_FixedCards() {
+		return (EReference)mainBoardEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMainBoard_Rounds() {
+		return (EReference)mainBoardEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRound() {
+		return roundEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRound_Name() {
+		return (EAttribute)roundEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRound_Actioncard() {
+		return (EReference)roundEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getParcelType() {
 		return parcelTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getResource() {
+		return resourceEEnum;
 	}
 
 	/**
@@ -220,8 +552,45 @@ public class MAgricolaPackageImpl extends EPackageImpl implements MAgricolaPacka
 		createEAttribute(parcelEClass, PARCEL__X);
 		createEAttribute(parcelEClass, PARCEL__Y);
 
+		gamerEClass = createEClass(GAMER);
+		createEAttribute(gamerEClass, GAMER__NAME);
+		createEReference(gamerEClass, GAMER__GAMERBOARD);
+
+		agricolaEClass = createEClass(AGRICOLA);
+		createEReference(agricolaEClass, AGRICOLA__GAMERS);
+		createEReference(agricolaEClass, AGRICOLA__CARDS);
+		createEReference(agricolaEClass, AGRICOLA__MAINBOARD);
+
+		actionCardEClass = createEClass(ACTION_CARD);
+		createEAttribute(actionCardEClass, ACTION_CARD__NAME);
+
+		supplierCardEClass = createEClass(SUPPLIER_CARD);
+		createEReference(supplierCardEClass, SUPPLIER_CARD__SUPPLY);
+		createEReference(supplierCardEClass, SUPPLIER_CARD__BANK_SUPPLY);
+
+		creationCardEClass = createEClass(CREATION_CARD);
+		createEReference(creationCardEClass, CREATION_CARD__CREATIONS);
+		createEAttribute(creationCardEClass, CREATION_CARD__UNIQUE);
+
+		supplyEClass = createEClass(SUPPLY);
+		createEAttribute(supplyEClass, SUPPLY__QUANTITY);
+		createEAttribute(supplyEClass, SUPPLY__RESOURCE_TYPE);
+
+		creationEClass = createEClass(CREATION);
+		createEAttribute(creationEClass, CREATION__NAME);
+		createEReference(creationEClass, CREATION__COST);
+
+		mainBoardEClass = createEClass(MAIN_BOARD);
+		createEReference(mainBoardEClass, MAIN_BOARD__FIXED_CARDS);
+		createEReference(mainBoardEClass, MAIN_BOARD__ROUNDS);
+
+		roundEClass = createEClass(ROUND);
+		createEAttribute(roundEClass, ROUND__NAME);
+		createEReference(roundEClass, ROUND__ACTIONCARD);
+
 		// Create enums
 		parcelTypeEEnum = createEEnum(PARCEL_TYPE);
+		resourceEEnum = createEEnum(RESOURCE);
 	}
 
 	/**
@@ -255,6 +624,8 @@ public class MAgricolaPackageImpl extends EPackageImpl implements MAgricolaPacka
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		supplierCardEClass.getESuperTypes().add(this.getActionCard());
+		creationCardEClass.getESuperTypes().add(this.getActionCard());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(gamerBoardEClass, MGamerBoard.class, "GamerBoard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -267,6 +638,42 @@ public class MAgricolaPackageImpl extends EPackageImpl implements MAgricolaPacka
 		initEAttribute(getParcel_X(), theXMLTypePackage.getInt(), "x", null, 0, 1, MParcel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParcel_Y(), theXMLTypePackage.getInt(), "y", null, 0, 1, MParcel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(gamerEClass, MGamer.class, "Gamer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getGamer_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, MGamer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGamer_Gamerboard(), this.getGamerBoard(), null, "gamerboard", null, 1, 1, MGamer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(agricolaEClass, MAgricola.class, "Agricola", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAgricola_Gamers(), this.getGamer(), null, "gamers", null, 1, 5, MAgricola.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgricola_Cards(), this.getActionCard(), null, "cards", null, 0, -1, MAgricola.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgricola_Mainboard(), this.getMainBoard(), null, "mainboard", null, 1, 1, MAgricola.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(actionCardEClass, MActionCard.class, "ActionCard", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getActionCard_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, MActionCard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(supplierCardEClass, MSupplierCard.class, "SupplierCard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSupplierCard_Supply(), this.getSupply(), null, "supply", null, 1, 1, MSupplierCard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSupplierCard_BankSupply(), this.getSupply(), null, "bankSupply", null, 0, -1, MSupplierCard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(creationCardEClass, MCreationCard.class, "CreationCard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCreationCard_Creations(), this.getCreation(), null, "creations", null, 1, -1, MCreationCard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCreationCard_Unique(), theXMLTypePackage.getBoolean(), "unique", null, 0, 1, MCreationCard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(supplyEClass, MSupply.class, "Supply", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSupply_Quantity(), theXMLTypePackage.getInt(), "quantity", null, 0, 1, MSupply.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSupply_ResourceType(), this.getResource(), "resourceType", null, 0, 1, MSupply.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(creationEClass, MCreation.class, "Creation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCreation_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, MCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCreation_Cost(), this.getSupply(), null, "cost", null, 0, -1, MCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(mainBoardEClass, MMainBoard.class, "MainBoard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMainBoard_FixedCards(), this.getActionCard(), null, "fixedCards", null, 10, 16, MMainBoard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMainBoard_Rounds(), this.getRound(), null, "rounds", null, 1, 14, MMainBoard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(roundEClass, MRound.class, "Round", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRound_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, MRound.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRound_Actioncard(), this.getActionCard(), null, "actioncard", null, 0, -1, MRound.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(parcelTypeEEnum, ParcelType.class, "ParcelType");
 		addEEnumLiteral(parcelTypeEEnum, ParcelType.UNDEFINED);
@@ -274,6 +681,16 @@ public class MAgricolaPackageImpl extends EPackageImpl implements MAgricolaPacka
 		addEEnumLiteral(parcelTypeEEnum, ParcelType.ENCLOSURE);
 		addEEnumLiteral(parcelTypeEEnum, ParcelType.SHED);
 		addEEnumLiteral(parcelTypeEEnum, ParcelType.HOUSE);
+
+		initEEnum(resourceEEnum, Resource.class, "Resource");
+		addEEnumLiteral(resourceEEnum, Resource.UNDEFINED);
+		addEEnumLiteral(resourceEEnum, Resource.CLAY);
+		addEEnumLiteral(resourceEEnum, Resource.REED);
+		addEEnumLiteral(resourceEEnum, Resource.WOOD);
+		addEEnumLiteral(resourceEEnum, Resource.STONE);
+		addEEnumLiteral(resourceEEnum, Resource.CEREAL);
+		addEEnumLiteral(resourceEEnum, Resource.CARROT);
+		addEEnumLiteral(resourceEEnum, Resource.COIN);
 
 		// Create resource
 		createResource(eNS_URI);

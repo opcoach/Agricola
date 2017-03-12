@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agricola:Agricola
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:agricola="http://com.bistiboy.agricola/1.0"
+    xsi:schemaLocation="http://com.bistiboy.agricola/1.0 agricola.ecore">
+  <gamers/>
+  <cards xsi:type="agricola:SupplierCard"
+      name="1 Pierre">
+    <supply
+        quantity="1"
+        resourceType="Stone"/>
+  </cards>
+  <cards xsi:type="agricola:CreationCard"
+      name="Clotures">
+    <creations
+        name="Cloture">
+      <cost
+          quantity="1"
+          resourceType="Wood"/>
+    </creations>
+  </cards>
+  <cards xsi:type="agricola:CreationCard"
+      name="Construction d'une piece">
+    <creations
+        name="Cabane en bois">
+      <cost
+          quantity="5"
+          resourceType="Wood"/>
+      <cost
+          quantity="2"
+          resourceType="Reed"/>
+    </creations>
+    <creations
+        name="Cabane en argile">
+      <cost
+          quantity="5"
+          resourceType="Clay"/>
+      <cost
+          quantity="2"
+          resourceType="Reed"/>
+    </creations>
+    <creations
+        name="Maison en pierre">
+      <cost
+          quantity="5"
+          resourceType="Stone"/>
+      <cost
+          quantity="2"
+          resourceType="Reed"/>
+    </creations>
+  </cards>
+  <mainboard>
+    <rounds
+        name="Tour 1"
+        actioncard="//@cards.2 //@cards.0"/>
+  </mainboard>
+</agricola:Agricola>

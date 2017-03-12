@@ -15,6 +15,16 @@
       <genEnumLiterals ecoreEnumLiteral="agricola.ecore#//ParcelType/Shed"/>
       <genEnumLiterals ecoreEnumLiteral="agricola.ecore#//ParcelType/House"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="agricola.ecore#//Resource">
+      <genEnumLiterals ecoreEnumLiteral="agricola.ecore#//Resource/Undefined"/>
+      <genEnumLiterals ecoreEnumLiteral="agricola.ecore#//Resource/Clay"/>
+      <genEnumLiterals ecoreEnumLiteral="agricola.ecore#//Resource/Reed"/>
+      <genEnumLiterals ecoreEnumLiteral="agricola.ecore#//Resource/Wood"/>
+      <genEnumLiterals ecoreEnumLiteral="agricola.ecore#//Resource/Stone"/>
+      <genEnumLiterals ecoreEnumLiteral="agricola.ecore#//Resource/Cereal"/>
+      <genEnumLiterals ecoreEnumLiteral="agricola.ecore#//Resource/Carrot"/>
+      <genEnumLiterals ecoreEnumLiteral="agricola.ecore#//Resource/Coin"/>
+    </genEnums>
     <genClasses ecoreClass="agricola.ecore#//GamerBoard">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agricola.ecore#//GamerBoard/parcels"/>
       <genOperations ecoreOperation="agricola.ecore#//GamerBoard/computeScore"/>
@@ -23,6 +33,42 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agricola.ecore#//Parcel/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agricola.ecore#//Parcel/x"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agricola.ecore#//Parcel/y"/>
+    </genClasses>
+    <genClasses ecoreClass="agricola.ecore#//Gamer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agricola.ecore#//Gamer/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agricola.ecore#//Gamer/gamerboard"/>
+    </genClasses>
+    <genClasses ecoreClass="agricola.ecore#//Agricola">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agricola.ecore#//Agricola/gamers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agricola.ecore#//Agricola/cards"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agricola.ecore#//Agricola/mainboard"/>
+    </genClasses>
+    <genClasses ecoreClass="agricola.ecore#//ActionCard">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agricola.ecore#//ActionCard/name"/>
+    </genClasses>
+    <genClasses ecoreClass="agricola.ecore#//SupplierCard">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference agricola.ecore#//SupplierCard/supply"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agricola.ecore#//SupplierCard/bankSupply"/>
+    </genClasses>
+    <genClasses ecoreClass="agricola.ecore#//CreationCard">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agricola.ecore#//CreationCard/creations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agricola.ecore#//CreationCard/unique"/>
+    </genClasses>
+    <genClasses ecoreClass="agricola.ecore#//Supply">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agricola.ecore#//Supply/quantity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agricola.ecore#//Supply/resourceType"/>
+    </genClasses>
+    <genClasses ecoreClass="agricola.ecore#//Creation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agricola.ecore#//Creation/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agricola.ecore#//Creation/cost"/>
+    </genClasses>
+    <genClasses ecoreClass="agricola.ecore#//MainBoard">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference agricola.ecore#//MainBoard/fixedCards"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference agricola.ecore#//MainBoard/rounds"/>
+    </genClasses>
+    <genClasses ecoreClass="agricola.ecore#//Round">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute agricola.ecore#//Round/name"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference agricola.ecore#//Round/actioncard"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
