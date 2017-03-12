@@ -6,7 +6,7 @@ import com.bistiboy.agricola.AgricolaFactory;
 public class AgricolaSimu {
 	
 	public static void main(String[] args) {
-		
+		System.out.println("Démarrage du simu");
 		AgricolaFactory f = AgricolaFactory.eINSTANCE;
 		
 		Agricola a = f.createAgricola();
