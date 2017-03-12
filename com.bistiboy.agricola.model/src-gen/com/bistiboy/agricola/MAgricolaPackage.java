@@ -252,13 +252,31 @@ public interface MAgricolaPackage extends EPackage {
 	int AGRICOLA_FEATURE_COUNT = 3;
 
 	/**
+	 * The operation id for the '<em>Start</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGRICOLA___START = 0;
+
+	/**
+	 * The operation id for the '<em>Play</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGRICOLA___PLAY__MGAMER = 1;
+
+	/**
 	 * The number of operations of the '<em>Agricola</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGRICOLA_OPERATION_COUNT = 0;
+	int AGRICOLA_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link com.bistiboy.agricola.impl.MActionCardImpl <em>Action Card</em>}' class.
@@ -763,6 +781,26 @@ public interface MAgricolaPackage extends EPackage {
 	EReference getAgricola_Mainboard();
 
 	/**
+	 * Returns the meta object for the '{@link com.bistiboy.agricola.MAgricola#start() <em>Start</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Start</em>' operation.
+	 * @see com.bistiboy.agricola.MAgricola#start()
+	 * @generated
+	 */
+	EOperation getAgricola__Start();
+
+	/**
+	 * Returns the meta object for the '{@link com.bistiboy.agricola.MAgricola#play(com.bistiboy.agricola.MGamer) <em>Play</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Play</em>' operation.
+	 * @see com.bistiboy.agricola.MAgricola#play(com.bistiboy.agricola.MGamer)
+	 * @generated
+	 */
+	EOperation getAgricola__Play__MGamer();
+
+	/**
 	 * Returns the meta object for class '{@link com.bistiboy.agricola.MActionCard <em>Action Card</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1137,6 +1175,22 @@ public interface MAgricolaPackage extends EPackage {
 		 * @generated
 		 */
 		EReference AGRICOLA__MAINBOARD = eINSTANCE.getAgricola_Mainboard();
+
+		/**
+		 * The meta object literal for the '<em><b>Start</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation AGRICOLA___START = eINSTANCE.getAgricola__Start();
+
+		/**
+		 * The meta object literal for the '<em><b>Play</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation AGRICOLA___PLAY__MGAMER = eINSTANCE.getAgricola__Play__MGamer();
 
 		/**
 		 * The meta object literal for the '{@link com.bistiboy.agricola.impl.MActionCardImpl <em>Action Card</em>}' class.

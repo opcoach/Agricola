@@ -137,6 +137,14 @@
         <children xmi:type="notation:Node" xmi:id="_dab-QAc8EeeU0PdfBwXybQ" type="2003" element="_dZ_5YAc8EeeU0PdfBwXybQ">
           <children xmi:type="notation:Node" xmi:id="_dalvQAc8EeeU0PdfBwXybQ" type="5007"/>
           <children xmi:type="notation:Node" xmi:id="_dalvQQc8EeeU0PdfBwXybQ" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_pcU9oAdOEeeU0PdfBwXybQ" type="3010" element="_pblWwAdOEeeU0PdfBwXybQ">
+              <styles xmi:type="notation:FontStyle" xmi:id="_pcU9oQdOEeeU0PdfBwXybQ" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_pcU9ogdOEeeU0PdfBwXybQ"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_rktmcAdOEeeU0PdfBwXybQ" type="3010" element="_rkQ6gAdOEeeU0PdfBwXybQ">
+              <styles xmi:type="notation:FontStyle" xmi:id="_rktmcQdOEeeU0PdfBwXybQ" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_rktmcgdOEeeU0PdfBwXybQ"/>
+            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_dalvQgc8EeeU0PdfBwXybQ"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_dalvQwc8EeeU0PdfBwXybQ"/>
           </children>
@@ -493,10 +501,27 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_dZ_5YQc8EeeU0PdfBwXybQ" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_2k3hMAdOEeeU0PdfBwXybQ" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_pblWwAdOEeeU0PdfBwXybQ" name="start()" tooltipText="start()">
+        <target xmi:type="ecore:EOperation" href="agricola.ecore#//Agricola/start"/>
+        <semanticElements xmi:type="ecore:EOperation" href="agricola.ecore#//Agricola/start"/>
+        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_pbvHwAdOEeeU0PdfBwXybQ" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_rkQ6gAdOEeeU0PdfBwXybQ" name="play(g Gamer)" tooltipText="play(g)">
+        <target xmi:type="ecore:EOperation" href="agricola.ecore#//Agricola/play"/>
+        <semanticElements xmi:type="ecore:EOperation" href="agricola.ecore#//Agricola/play"/>
+        <semanticElements xmi:type="ecore:EParameter" href="agricola.ecore#//Agricola/play/g"/>
+        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_rkQ6gQdOEeeU0PdfBwXybQ" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
+      </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_lMmTAAc8EeeU0PdfBwXybQ" name="[1..5] gamers" sourceNode="_dZ_5YAc8EeeU0PdfBwXybQ" targetNode="_JzYfIAc8EeeU0PdfBwXybQ">
       <target xmi:type="ecore:EReference" href="agricola.ecore#//Agricola/gamers"/>

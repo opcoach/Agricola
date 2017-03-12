@@ -8,6 +8,7 @@ import com.bistiboy.agricola.AgricolaPackage;
 import com.bistiboy.agricola.MAgricolaPackage;
 import com.bistiboy.agricola.Gamer;
 import com.bistiboy.agricola.MainBoard;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -157,6 +158,28 @@ import org.eclipse.emf.ecore.util.InternalEList;
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void start() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException(); 
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void play(Gamer g) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException(); 
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -249,6 +272,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 				return mainboard != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case MAgricolaPackage.AGRICOLA___START:
+				start();
+				return null;
+			case MAgricolaPackage.AGRICOLA___PLAY__MGAMER:
+				play((Gamer)arguments.get(0));
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //MAgricolaImpl

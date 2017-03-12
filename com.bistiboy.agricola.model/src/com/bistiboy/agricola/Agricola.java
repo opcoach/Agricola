@@ -8,5 +8,10 @@ public interface Agricola extends MAgricola
 	//
 	// For instance : 
 	// default public void addSomething(Something foo) {} ;
+	
+	default public void addGamer(String name){
+		
+		getGamers().add(AgricolaFactory.eINSTANCE.createGamer(name));
+	}
 
 }

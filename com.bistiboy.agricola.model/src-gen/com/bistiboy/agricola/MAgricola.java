@@ -89,4 +89,20 @@ public interface MAgricola extends EObject {
 	 */
 	void setMainboard(MainBoard value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void start();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void play(Gamer g);
+
 } // MAgricola

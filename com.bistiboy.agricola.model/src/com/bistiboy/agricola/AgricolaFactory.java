@@ -14,6 +14,7 @@ public interface AgricolaFactory extends MAgricolaFactory
 	public GamerBoard createGamerBoard();
 	public Parcel createParcel();
 	public Gamer createGamer();
+	public Gamer createGamer(String name);
 	public Agricola createAgricola();
 	public SupplierCard createSupplierCard();
 	public CreationCard createCreationCard();

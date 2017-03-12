@@ -10,16 +10,16 @@ import com.bistiboy.agricola.SupplierCard;
 
 public class AgricolaBox {
 	private AgricolaFactory f = AgricolaFactory.eINSTANCE;
-
-	public Agricola createBox() {
-
+	
+	public void init(Agricola agricolaImpl) {
+		
 		Agricola a = f.createAgricola();
 		createSupplierCard(a);
 		createCreationCard(a);
 
 		fillMainBoard(a);
 
-		return a;
+		
 	}
 
 	private void createCreationCard(Agricola a) {
@@ -71,5 +71,7 @@ public class AgricolaBox {
 
 		a.setMainboard(mb);
 	}
+
+
 
 }

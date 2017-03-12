@@ -25,6 +25,10 @@
         eType="#//GamerBoard" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Agricola">
+    <eOperations name="start"/>
+    <eOperations name="play">
+      <eParameters name="g" eType="#//Gamer"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="gamers" lowerBound="1"
         upperBound="5" eType="#//Gamer" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cards" upperBound="-1"

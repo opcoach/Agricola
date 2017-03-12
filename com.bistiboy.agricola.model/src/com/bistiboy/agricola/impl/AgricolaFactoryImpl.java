@@ -14,7 +14,6 @@ import com.bistiboy.agricola.Resource;
 import com.bistiboy.agricola.Round;
 import com.bistiboy.agricola.SupplierCard;
 import com.bistiboy.agricola.Supply;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections;
 
 
 // This factory  overrides the generated factory and returns the new generated interfaces
@@ -47,6 +46,13 @@ public class AgricolaFactoryImpl extends MAgricolaFactoryImpl implements Agricol
 	public Gamer createGamer()
 	{
 		Gamer result = new GamerImpl();
+		result.setGamerboard(createGamerBoard());
+		return result;
+	}
+	public Gamer createGamer(String name)
+	{
+		Gamer result = createGamer();
+		result.setName(name);
 		return result;
 	}
 	public Agricola createAgricola()

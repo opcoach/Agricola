@@ -322,6 +322,24 @@ public class MAgricolaPackageImpl extends EPackageImpl implements MAgricolaPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getAgricola__Start() {
+		return agricolaEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAgricola__Play__MGamer() {
+		return agricolaEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getActionCard() {
 		return actionCardEClass;
 	}
@@ -560,6 +578,8 @@ public class MAgricolaPackageImpl extends EPackageImpl implements MAgricolaPacka
 		createEReference(agricolaEClass, AGRICOLA__GAMERS);
 		createEReference(agricolaEClass, AGRICOLA__CARDS);
 		createEReference(agricolaEClass, AGRICOLA__MAINBOARD);
+		createEOperation(agricolaEClass, AGRICOLA___START);
+		createEOperation(agricolaEClass, AGRICOLA___PLAY__MGAMER);
 
 		actionCardEClass = createEClass(ACTION_CARD);
 		createEAttribute(actionCardEClass, ACTION_CARD__NAME);
@@ -646,6 +666,11 @@ public class MAgricolaPackageImpl extends EPackageImpl implements MAgricolaPacka
 		initEReference(getAgricola_Gamers(), this.getGamer(), null, "gamers", null, 1, 5, MAgricola.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAgricola_Cards(), this.getActionCard(), null, "cards", null, 0, -1, MAgricola.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAgricola_Mainboard(), this.getMainBoard(), null, "mainboard", null, 1, 1, MAgricola.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getAgricola__Start(), null, "start", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		EOperation op = initEOperation(getAgricola__Play__MGamer(), null, "play", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getGamer(), "g", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(actionCardEClass, MActionCard.class, "ActionCard", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getActionCard_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, MActionCard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
