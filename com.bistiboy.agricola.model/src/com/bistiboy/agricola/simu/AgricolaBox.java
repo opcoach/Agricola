@@ -11,9 +11,8 @@ import com.bistiboy.agricola.SupplierCard;
 public class AgricolaBox {
 	private AgricolaFactory f = AgricolaFactory.eINSTANCE;
 	
-	public void init(Agricola agricolaImpl) {
+	public void init(Agricola a) {
 		
-		Agricola a = f.createAgricola();
 		createSupplierCard(a);
 		createCreationCard(a);
 

@@ -25,6 +25,7 @@ public class AgricolaPart {
 		AgricolaBox box = new AgricolaBox();
 		box.init(a);
 
+		System.out.println("Main board " + a.getMainboard().toString());
 		a.addGamer("Olivier");
 		a.addGamer("Tom");
 
