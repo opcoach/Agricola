@@ -16,6 +16,10 @@
                name="applicationCSS"
                value="platform:/plugin/com.opcoach.agricola.eap/css/default.css">
          </property>
+         <property
+               name="appName"
+               value="com.opcoach.agricola.eap">
+         </property>
       </product>
    </extension>
 
