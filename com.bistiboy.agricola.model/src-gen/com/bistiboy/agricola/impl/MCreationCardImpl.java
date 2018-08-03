@@ -23,11 +23,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.bistiboy.agricola.impl.MCreationCardImpl#getCreations <em>Creations</em>}</li>
  *   <li>{@link com.bistiboy.agricola.impl.MCreationCardImpl#isUnique <em>Unique</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -88,7 +88,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 	 */
 	public EList<Creation> getCreations() {
 		if (creations == null) {
-			creations = new EObjectContainmentEList<Creation>(Creation.class, this, AgricolaPackage.CREATION_CARD__CREATIONS);
+			creations = new EObjectContainmentEList<Creation>(Creation.class, this, MAgricolaPackage.CREATION_CARD__CREATIONS);
 		}
 		return creations;
 	}
@@ -207,7 +207,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (unique: ");
 		result.append(unique);
 		result.append(')');

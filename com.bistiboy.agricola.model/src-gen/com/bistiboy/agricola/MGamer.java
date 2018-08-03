@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.bistiboy.agricola.MGamer#getName <em>Name</em>}</li>
  *   <li>{@link com.bistiboy.agricola.MGamer#getGamerboard <em>Gamerboard</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.bistiboy.agricola.MAgricolaPackage#getGamer()
  * @model
@@ -58,7 +58,7 @@ public interface MGamer extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Gamerboard</em>' containment reference.
-	 * @see #setGamerboard(MGamerBoard)
+	 * @see #setGamerboard(GamerBoard)
 	 * @see com.bistiboy.agricola.MAgricolaPackage#getGamer_Gamerboard()
 	 * @model containment="true" required="true"
 	 * @generated

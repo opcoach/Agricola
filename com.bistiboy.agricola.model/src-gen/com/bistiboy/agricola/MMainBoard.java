@@ -13,11 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.bistiboy.agricola.MMainBoard#getFixedCards <em>Fixed Cards</em>}</li>
  *   <li>{@link com.bistiboy.agricola.MMainBoard#getRounds <em>Rounds</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.bistiboy.agricola.MAgricolaPackage#getMainBoard()
  * @model
@@ -26,10 +26,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface MMainBoard extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Fixed Cards</b></em>' reference list.
-
-	 
-	 * The list contents are of type {@link com.bistiboy.agricola.MActionCard}. 
-	
+	 * The list contents are of type {@link com.bistiboy.agricola.ActionCard}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fixed Cards</em>' reference list isn't clear,
@@ -45,10 +42,7 @@ public interface MMainBoard extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Rounds</b></em>' containment reference list.
-
-	 
-	 * The list contents are of type {@link com.bistiboy.agricola.MRound}. 
-	
+	 * The list contents are of type {@link com.bistiboy.agricola.Round}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Rounds</em>' containment reference list isn't clear,

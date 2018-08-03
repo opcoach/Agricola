@@ -12,11 +12,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.bistiboy.agricola.MCreationCard#getCreations <em>Creations</em>}</li>
  *   <li>{@link com.bistiboy.agricola.MCreationCard#isUnique <em>Unique</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.bistiboy.agricola.MAgricolaPackage#getCreationCard()
  * @model
@@ -25,10 +25,7 @@ import org.eclipse.emf.common.util.EList;
 public interface MCreationCard extends ActionCard {
 	/**
 	 * Returns the value of the '<em><b>Creations</b></em>' containment reference list.
-
-	 
-	 * The list contents are of type {@link com.bistiboy.agricola.MCreation}. 
-	
+	 * The list contents are of type {@link com.bistiboy.agricola.Creation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Creations</em>' containment reference list isn't clear,

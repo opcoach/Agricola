@@ -27,12 +27,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.bistiboy.agricola.impl.MAgricolaImpl#getGamers <em>Gamers</em>}</li>
  *   <li>{@link com.bistiboy.agricola.impl.MAgricolaImpl#getCards <em>Cards</em>}</li>
  *   <li>{@link com.bistiboy.agricola.impl.MAgricolaImpl#getMainboard <em>Mainboard</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -93,7 +93,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 	 */
 	public EList<Gamer> getGamers() {
 		if (gamers == null) {
-			gamers = new EObjectContainmentEList<Gamer>(Gamer.class, this, AgricolaPackage.AGRICOLA__GAMERS);
+			gamers = new EObjectContainmentEList<Gamer>(Gamer.class, this, MAgricolaPackage.AGRICOLA__GAMERS);
 		}
 		return gamers;
 	}
@@ -105,7 +105,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 	 */
 	public EList<ActionCard> getCards() {
 		if (cards == null) {
-			cards = new EObjectContainmentEList<ActionCard>(ActionCard.class, this, AgricolaPackage.AGRICOLA__CARDS);
+			cards = new EObjectContainmentEList<ActionCard>(ActionCard.class, this, MAgricolaPackage.AGRICOLA__CARDS);
 		}
 		return cards;
 	}
@@ -161,7 +161,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 	public void start() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException(); 
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -172,7 +172,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 	public void play(Gamer g) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException(); 
+		throw new UnsupportedOperationException();
 	}
 
 	/**

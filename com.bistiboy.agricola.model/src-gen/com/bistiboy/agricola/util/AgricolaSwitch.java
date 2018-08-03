@@ -67,69 +67,69 @@ public class AgricolaSwitch<T> extends Switch<T> {
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case MAgricolaPackage.GAMER_BOARD: {
-				MGamerBoard gamerBoard = (MGamerBoard)theEObject;
+				GamerBoard gamerBoard = (GamerBoard)theEObject;
 				T result = caseGamerBoard(gamerBoard);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MAgricolaPackage.PARCEL: {
-				MParcel parcel = (MParcel)theEObject;
+				Parcel parcel = (Parcel)theEObject;
 				T result = caseParcel(parcel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MAgricolaPackage.GAMER: {
-				MGamer gamer = (MGamer)theEObject;
+				Gamer gamer = (Gamer)theEObject;
 				T result = caseGamer(gamer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MAgricolaPackage.AGRICOLA: {
-				MAgricola agricola = (MAgricola)theEObject;
+				Agricola agricola = (Agricola)theEObject;
 				T result = caseAgricola(agricola);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MAgricolaPackage.ACTION_CARD: {
-				MActionCard actionCard = (MActionCard)theEObject;
+				ActionCard actionCard = (ActionCard)theEObject;
 				T result = caseActionCard(actionCard);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MAgricolaPackage.SUPPLIER_CARD: {
-				MSupplierCard supplierCard = (MSupplierCard)theEObject;
+				SupplierCard supplierCard = (SupplierCard)theEObject;
 				T result = caseSupplierCard(supplierCard);
 				if (result == null) result = caseActionCard(supplierCard);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MAgricolaPackage.CREATION_CARD: {
-				MCreationCard creationCard = (MCreationCard)theEObject;
+				CreationCard creationCard = (CreationCard)theEObject;
 				T result = caseCreationCard(creationCard);
 				if (result == null) result = caseActionCard(creationCard);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MAgricolaPackage.SUPPLY: {
-				MSupply supply = (MSupply)theEObject;
+				Supply supply = (Supply)theEObject;
 				T result = caseSupply(supply);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MAgricolaPackage.CREATION: {
-				MCreation creation = (MCreation)theEObject;
+				Creation creation = (Creation)theEObject;
 				T result = caseCreation(creation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MAgricolaPackage.MAIN_BOARD: {
-				MMainBoard mainBoard = (MMainBoard)theEObject;
+				MainBoard mainBoard = (MainBoard)theEObject;
 				T result = caseMainBoard(mainBoard);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MAgricolaPackage.ROUND: {
-				MRound round = (MRound)theEObject;
+				Round round = (Round)theEObject;
 				T result = caseRound(round);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -149,7 +149,7 @@ public class AgricolaSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseGamerBoard(MGamerBoard object) {
+	public T caseGamerBoard(GamerBoard object) {
 		return null;
 	}
 
@@ -164,7 +164,7 @@ public class AgricolaSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseParcel(MParcel object) {
+	public T caseParcel(Parcel object) {
 		return null;
 	}
 
@@ -179,7 +179,7 @@ public class AgricolaSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseGamer(MGamer object) {
+	public T caseGamer(Gamer object) {
 		return null;
 	}
 
@@ -194,7 +194,7 @@ public class AgricolaSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAgricola(MAgricola object) {
+	public T caseAgricola(Agricola object) {
 		return null;
 	}
 
@@ -209,7 +209,7 @@ public class AgricolaSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseActionCard(MActionCard object) {
+	public T caseActionCard(ActionCard object) {
 		return null;
 	}
 
@@ -224,7 +224,7 @@ public class AgricolaSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSupplierCard(MSupplierCard object) {
+	public T caseSupplierCard(SupplierCard object) {
 		return null;
 	}
 
@@ -239,7 +239,7 @@ public class AgricolaSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCreationCard(MCreationCard object) {
+	public T caseCreationCard(CreationCard object) {
 		return null;
 	}
 
@@ -254,7 +254,7 @@ public class AgricolaSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSupply(MSupply object) {
+	public T caseSupply(Supply object) {
 		return null;
 	}
 
@@ -269,7 +269,7 @@ public class AgricolaSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCreation(MCreation object) {
+	public T caseCreation(Creation object) {
 		return null;
 	}
 
@@ -284,7 +284,7 @@ public class AgricolaSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMainBoard(MMainBoard object) {
+	public T caseMainBoard(MainBoard object) {
 		return null;
 	}
 
@@ -299,7 +299,7 @@ public class AgricolaSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRound(MRound object) {
+	public T caseRound(Round object) {
 		return null;
 	}
 

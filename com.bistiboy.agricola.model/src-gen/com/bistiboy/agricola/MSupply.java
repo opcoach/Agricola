@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.bistiboy.agricola.MSupply#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link com.bistiboy.agricola.MSupply#getResourceType <em>Resource Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.bistiboy.agricola.MAgricolaPackage#getSupply()
  * @model

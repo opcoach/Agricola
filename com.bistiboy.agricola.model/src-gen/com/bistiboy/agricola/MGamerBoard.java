@@ -13,10 +13,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.bistiboy.agricola.MGamerBoard#getParcels <em>Parcels</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.bistiboy.agricola.MAgricolaPackage#getGamerBoard()
  * @model
@@ -25,10 +25,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface MGamerBoard extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Parcels</b></em>' containment reference list.
-
-	 
-	 * The list contents are of type {@link com.bistiboy.agricola.MParcel}. 
-	
+	 * The list contents are of type {@link com.bistiboy.agricola.Parcel}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parcels</em>' containment reference list isn't clear,

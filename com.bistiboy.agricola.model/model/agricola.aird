@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis xmi:id="_yMyakAc2Eeen0fZnME884g" selectedViews="_yzXSYAc2Eeen0fZnME884g" version="11.1.0.201608251200">
+  <viewpoint:DAnalysis xmi:id="_yMyakAc2Eeen0fZnME884g" selectedViews="_yzXSYAc2Eeen0fZnME884g" version="12.0.0.201704271200">
     <semanticResources>agricola.ecore</semanticResources>
     <semanticResources>agricola.genmodel</semanticResources>
     <semanticResources>Agricola.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_yzXSYAc2Eeen0fZnME884g">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_y8BfIAc2Eeen0fZnME884g" name="agricola" representation="_y8BfIQc2Eeen0fZnME884g">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_y8BfIAc2Eeen0fZnME884g" name="agricola" repPath="#_y8BfIQc2Eeen0fZnME884g">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="agricola.ecore#/"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_ZQvIgAc9EeeU0PdfBwXybQ" name="cards" representation="_ZQvIgQc9EeeU0PdfBwXybQ">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_ZQvIgAc9EeeU0PdfBwXybQ" name="cards" repPath="#_ZQvIgQc9EeeU0PdfBwXybQ">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="agricola.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -975,7 +975,7 @@
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_IYbcsAc_EeeU0PdfBwXybQ" sourceNode="_CJKeEAc_EeeU0PdfBwXybQ" targetNode="_i78NEAc-EeeU0PdfBwXybQ">
       <target xmi:type="ecore:EClass" href="agricola.ecore#//CreationCard"/>
-      <semanticElements xmi:type="ecore:EGenericType" href="agricola.ecore#//CreationCard/@eGenericSuperTypes.0"/>
+      <semanticElements xmi:type="ecore:EClass" href="agricola.ecore#//CreationCard"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_QhNPwgdBEeeU0PdfBwXybQ" targetArrow="InputClosedArrow" routingStyle="tree">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_QhNPwwdBEeeU0PdfBwXybQ" showIcon="false">
@@ -987,7 +987,7 @@
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_Iv0pAAc_EeeU0PdfBwXybQ" sourceNode="_BiRdMAc_EeeU0PdfBwXybQ" targetNode="_i78NEAc-EeeU0PdfBwXybQ">
       <target xmi:type="ecore:EClass" href="agricola.ecore#//SupplierCard"/>
-      <semanticElements xmi:type="ecore:EGenericType" href="agricola.ecore#//SupplierCard/@eGenericSuperTypes.0"/>
+      <semanticElements xmi:type="ecore:EClass" href="agricola.ecore#//SupplierCard"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_PCg5oAdAEeeU0PdfBwXybQ" targetArrow="InputClosedArrow" routingStyle="tree">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_PCg5oQdAEeeU0PdfBwXybQ" showIcon="false">

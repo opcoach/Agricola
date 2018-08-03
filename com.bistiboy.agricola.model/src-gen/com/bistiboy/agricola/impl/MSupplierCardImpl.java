@@ -23,11 +23,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.bistiboy.agricola.impl.MSupplierCardImpl#getSupply <em>Supply</em>}</li>
  *   <li>{@link com.bistiboy.agricola.impl.MSupplierCardImpl#getBankSupply <em>Bank Supply</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -121,7 +121,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 	 */
 	public EList<Supply> getBankSupply() {
 		if (bankSupply == null) {
-			bankSupply = new EObjectContainmentEList<Supply>(Supply.class, this, AgricolaPackage.SUPPLIER_CARD__BANK_SUPPLY);
+			bankSupply = new EObjectContainmentEList<Supply>(Supply.class, this, MAgricolaPackage.SUPPLIER_CARD__BANK_SUPPLY);
 		}
 		return bankSupply;
 	}

@@ -28,7 +28,7 @@ public interface MAgricolaFactory extends EFactory {
 	 * @return a new object of class '<em>Gamer Board</em>'.
 	 * @generated
 	 */
-	MGamerBoard createGamerBoard();
+	GamerBoard createGamerBoard();
 
 	/**
 	 * Returns a new object of class '<em>Parcel</em>'.
@@ -37,7 +37,7 @@ public interface MAgricolaFactory extends EFactory {
 	 * @return a new object of class '<em>Parcel</em>'.
 	 * @generated
 	 */
-	MParcel createParcel();
+	Parcel createParcel();
 
 	/**
 	 * Returns a new object of class '<em>Gamer</em>'.
@@ -46,7 +46,7 @@ public interface MAgricolaFactory extends EFactory {
 	 * @return a new object of class '<em>Gamer</em>'.
 	 * @generated
 	 */
-	MGamer createGamer();
+	Gamer createGamer();
 
 	/**
 	 * Returns a new object of class '<em>Agricola</em>'.
@@ -55,7 +55,7 @@ public interface MAgricolaFactory extends EFactory {
 	 * @return a new object of class '<em>Agricola</em>'.
 	 * @generated
 	 */
-	MAgricola createAgricola();
+	Agricola createAgricola();
 
 	/**
 	 * Returns a new object of class '<em>Supplier Card</em>'.
@@ -64,7 +64,7 @@ public interface MAgricolaFactory extends EFactory {
 	 * @return a new object of class '<em>Supplier Card</em>'.
 	 * @generated
 	 */
-	MSupplierCard createSupplierCard();
+	SupplierCard createSupplierCard();
 
 	/**
 	 * Returns a new object of class '<em>Creation Card</em>'.
@@ -73,7 +73,7 @@ public interface MAgricolaFactory extends EFactory {
 	 * @return a new object of class '<em>Creation Card</em>'.
 	 * @generated
 	 */
-	MCreationCard createCreationCard();
+	CreationCard createCreationCard();
 
 	/**
 	 * Returns a new object of class '<em>Supply</em>'.
@@ -82,7 +82,7 @@ public interface MAgricolaFactory extends EFactory {
 	 * @return a new object of class '<em>Supply</em>'.
 	 * @generated
 	 */
-	MSupply createSupply();
+	Supply createSupply();
 
 	/**
 	 * Returns a new object of class '<em>Creation</em>'.
@@ -91,7 +91,7 @@ public interface MAgricolaFactory extends EFactory {
 	 * @return a new object of class '<em>Creation</em>'.
 	 * @generated
 	 */
-	MCreation createCreation();
+	Creation createCreation();
 
 	/**
 	 * Returns a new object of class '<em>Main Board</em>'.
@@ -100,7 +100,7 @@ public interface MAgricolaFactory extends EFactory {
 	 * @return a new object of class '<em>Main Board</em>'.
 	 * @generated
 	 */
-	MMainBoard createMainBoard();
+	MainBoard createMainBoard();
 
 	/**
 	 * Returns a new object of class '<em>Round</em>'.
@@ -109,7 +109,7 @@ public interface MAgricolaFactory extends EFactory {
 	 * @return a new object of class '<em>Round</em>'.
 	 * @generated
 	 */
-	MRound createRound();
+	Round createRound();
 
 	/**
 	 * Returns the package supported by this factory.

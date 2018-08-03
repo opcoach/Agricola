@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.bistiboy.agricola.MAgricola#getGamers <em>Gamers</em>}</li>
  *   <li>{@link com.bistiboy.agricola.MAgricola#getCards <em>Cards</em>}</li>
  *   <li>{@link com.bistiboy.agricola.MAgricola#getMainboard <em>Mainboard</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.bistiboy.agricola.MAgricolaPackage#getAgricola()
  * @model
@@ -27,10 +27,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface MAgricola extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Gamers</b></em>' containment reference list.
-
-	 
-	 * The list contents are of type {@link com.bistiboy.agricola.MGamer}. 
-	
+	 * The list contents are of type {@link com.bistiboy.agricola.Gamer}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gamers</em>' containment reference list isn't clear,
@@ -46,10 +43,7 @@ public interface MAgricola extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Cards</b></em>' containment reference list.
-
-	 
-	 * The list contents are of type {@link com.bistiboy.agricola.MActionCard}. 
-	
+	 * The list contents are of type {@link com.bistiboy.agricola.ActionCard}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cards</em>' containment reference list isn't clear,
@@ -72,7 +66,7 @@ public interface MAgricola extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Mainboard</em>' containment reference.
-	 * @see #setMainboard(MMainBoard)
+	 * @see #setMainboard(MainBoard)
 	 * @see com.bistiboy.agricola.MAgricolaPackage#getAgricola_Mainboard()
 	 * @model containment="true" required="true"
 	 * @generated

@@ -24,11 +24,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.bistiboy.agricola.impl.MCreationImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.bistiboy.agricola.impl.MCreationImpl#getCost <em>Cost</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -110,7 +110,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 	 */
 	public EList<Supply> getCost() {
 		if (cost == null) {
-			cost = new EObjectContainmentEList<Supply>(Supply.class, this, AgricolaPackage.CREATION__COST);
+			cost = new EObjectContainmentEList<Supply>(Supply.class, this, MAgricolaPackage.CREATION__COST);
 		}
 		return cost;
 	}
@@ -208,7 +208,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');

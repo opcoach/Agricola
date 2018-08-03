@@ -68,47 +68,47 @@ public class AgricolaAdapterFactory extends AdapterFactoryImpl {
 	protected AgricolaSwitch<Adapter> modelSwitch =
 		new AgricolaSwitch<Adapter>() {
 			@Override
-			public Adapter caseGamerBoard(MGamerBoard object) {
+			public Adapter caseGamerBoard(GamerBoard object) {
 				return createGamerBoardAdapter();
 			}
 			@Override
-			public Adapter caseParcel(MParcel object) {
+			public Adapter caseParcel(Parcel object) {
 				return createParcelAdapter();
 			}
 			@Override
-			public Adapter caseGamer(MGamer object) {
+			public Adapter caseGamer(Gamer object) {
 				return createGamerAdapter();
 			}
 			@Override
-			public Adapter caseAgricola(MAgricola object) {
+			public Adapter caseAgricola(Agricola object) {
 				return createAgricolaAdapter();
 			}
 			@Override
-			public Adapter caseActionCard(MActionCard object) {
+			public Adapter caseActionCard(ActionCard object) {
 				return createActionCardAdapter();
 			}
 			@Override
-			public Adapter caseSupplierCard(MSupplierCard object) {
+			public Adapter caseSupplierCard(SupplierCard object) {
 				return createSupplierCardAdapter();
 			}
 			@Override
-			public Adapter caseCreationCard(MCreationCard object) {
+			public Adapter caseCreationCard(CreationCard object) {
 				return createCreationCardAdapter();
 			}
 			@Override
-			public Adapter caseSupply(MSupply object) {
+			public Adapter caseSupply(Supply object) {
 				return createSupplyAdapter();
 			}
 			@Override
-			public Adapter caseCreation(MCreation object) {
+			public Adapter caseCreation(Creation object) {
 				return createCreationAdapter();
 			}
 			@Override
-			public Adapter caseMainBoard(MMainBoard object) {
+			public Adapter caseMainBoard(MainBoard object) {
 				return createMainBoardAdapter();
 			}
 			@Override
-			public Adapter caseRound(MRound object) {
+			public Adapter caseRound(Round object) {
 				return createRoundAdapter();
 			}
 			@Override

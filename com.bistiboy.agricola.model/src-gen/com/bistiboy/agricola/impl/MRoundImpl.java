@@ -21,11 +21,11 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.bistiboy.agricola.impl.MRoundImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.bistiboy.agricola.impl.MRoundImpl#getActioncard <em>Actioncard</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -107,7 +107,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 	 */
 	public EList<ActionCard> getActioncard() {
 		if (actioncard == null) {
-			actioncard = new EObjectResolvingEList<ActionCard>(ActionCard.class, this, AgricolaPackage.ROUND__ACTIONCARD);
+			actioncard = new EObjectResolvingEList<ActionCard>(ActionCard.class, this, MAgricolaPackage.ROUND__ACTIONCARD);
 		}
 		return actioncard;
 	}
@@ -191,7 +191,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');

@@ -24,11 +24,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.bistiboy.agricola.impl.MMainBoardImpl#getFixedCards <em>Fixed Cards</em>}</li>
  *   <li>{@link com.bistiboy.agricola.impl.MMainBoardImpl#getRounds <em>Rounds</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -79,7 +79,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 	 */
 	public EList<ActionCard> getFixedCards() {
 		if (fixedCards == null) {
-			fixedCards = new EObjectResolvingEList<ActionCard>(ActionCard.class, this, AgricolaPackage.MAIN_BOARD__FIXED_CARDS);
+			fixedCards = new EObjectResolvingEList<ActionCard>(ActionCard.class, this, MAgricolaPackage.MAIN_BOARD__FIXED_CARDS);
 		}
 		return fixedCards;
 	}
@@ -91,7 +91,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 	 */
 	public EList<Round> getRounds() {
 		if (rounds == null) {
-			rounds = new EObjectContainmentEList<Round>(Round.class, this, AgricolaPackage.MAIN_BOARD__ROUNDS);
+			rounds = new EObjectContainmentEList<Round>(Round.class, this, MAgricolaPackage.MAIN_BOARD__ROUNDS);
 		}
 		return rounds;
 	}

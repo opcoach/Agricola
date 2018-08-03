@@ -18,11 +18,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.bistiboy.agricola.impl.MSupplyImpl#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link com.bistiboy.agricola.impl.MSupplyImpl#getResourceType <em>Resource Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -205,7 +205,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (quantity: ");
 		result.append(quantity);
 		result.append(", resourceType: ");

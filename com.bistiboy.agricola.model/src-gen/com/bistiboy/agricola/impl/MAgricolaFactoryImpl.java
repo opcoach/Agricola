@@ -111,8 +111,8 @@ public class MAgricolaFactoryImpl extends EFactoryImpl implements MAgricolaFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MGamerBoard createGamerBoard() {
-		MGamerBoardImpl gamerBoard = new MGamerBoardImpl();
+	public GamerBoard createGamerBoard() {
+		GamerBoardImpl gamerBoard = new GamerBoardImpl();
 		return gamerBoard;
 	}
 
@@ -121,8 +121,8 @@ public class MAgricolaFactoryImpl extends EFactoryImpl implements MAgricolaFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MParcel createParcel() {
-		MParcelImpl parcel = new MParcelImpl();
+	public Parcel createParcel() {
+		ParcelImpl parcel = new ParcelImpl();
 		return parcel;
 	}
 
@@ -131,8 +131,8 @@ public class MAgricolaFactoryImpl extends EFactoryImpl implements MAgricolaFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MGamer createGamer() {
-		MGamerImpl gamer = new MGamerImpl();
+	public Gamer createGamer() {
+		GamerImpl gamer = new GamerImpl();
 		return gamer;
 	}
 
@@ -141,8 +141,8 @@ public class MAgricolaFactoryImpl extends EFactoryImpl implements MAgricolaFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MAgricola createAgricola() {
-		MAgricolaImpl agricola = new MAgricolaImpl();
+	public Agricola createAgricola() {
+		AgricolaImpl agricola = new AgricolaImpl();
 		return agricola;
 	}
 
@@ -151,8 +151,8 @@ public class MAgricolaFactoryImpl extends EFactoryImpl implements MAgricolaFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MSupplierCard createSupplierCard() {
-		MSupplierCardImpl supplierCard = new MSupplierCardImpl();
+	public SupplierCard createSupplierCard() {
+		SupplierCardImpl supplierCard = new SupplierCardImpl();
 		return supplierCard;
 	}
 
@@ -161,8 +161,8 @@ public class MAgricolaFactoryImpl extends EFactoryImpl implements MAgricolaFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MCreationCard createCreationCard() {
-		MCreationCardImpl creationCard = new MCreationCardImpl();
+	public CreationCard createCreationCard() {
+		CreationCardImpl creationCard = new CreationCardImpl();
 		return creationCard;
 	}
 
@@ -171,8 +171,8 @@ public class MAgricolaFactoryImpl extends EFactoryImpl implements MAgricolaFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MSupply createSupply() {
-		MSupplyImpl supply = new MSupplyImpl();
+	public Supply createSupply() {
+		SupplyImpl supply = new SupplyImpl();
 		return supply;
 	}
 
@@ -181,8 +181,8 @@ public class MAgricolaFactoryImpl extends EFactoryImpl implements MAgricolaFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MCreation createCreation() {
-		MCreationImpl creation = new MCreationImpl();
+	public Creation createCreation() {
+		CreationImpl creation = new CreationImpl();
 		return creation;
 	}
 
@@ -191,8 +191,8 @@ public class MAgricolaFactoryImpl extends EFactoryImpl implements MAgricolaFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MMainBoard createMainBoard() {
-		MMainBoardImpl mainBoard = new MMainBoardImpl();
+	public MainBoard createMainBoard() {
+		MainBoardImpl mainBoard = new MainBoardImpl();
 		return mainBoard;
 	}
 
@@ -201,8 +201,8 @@ public class MAgricolaFactoryImpl extends EFactoryImpl implements MAgricolaFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MRound createRound() {
-		MRoundImpl round = new MRoundImpl();
+	public Round createRound() {
+		RoundImpl round = new RoundImpl();
 		return round;
 	}
 

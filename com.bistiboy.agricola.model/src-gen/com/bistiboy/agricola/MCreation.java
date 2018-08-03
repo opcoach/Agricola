@@ -13,11 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.bistiboy.agricola.MCreation#getName <em>Name</em>}</li>
  *   <li>{@link com.bistiboy.agricola.MCreation#getCost <em>Cost</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.bistiboy.agricola.MAgricolaPackage#getCreation()
  * @model
@@ -52,10 +52,7 @@ public interface MCreation extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Cost</b></em>' containment reference list.
-
-	 
-	 * The list contents are of type {@link com.bistiboy.agricola.MSupply}. 
-	
+	 * The list contents are of type {@link com.bistiboy.agricola.Supply}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cost</em>' containment reference list isn't clear,

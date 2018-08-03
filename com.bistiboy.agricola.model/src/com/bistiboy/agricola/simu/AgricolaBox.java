@@ -20,12 +20,12 @@ public class AgricolaBox {
 		fillMainBoard(a);
 
 		
-	}
+	} 
 
 	private void createCreationCard(Agricola a) {
 		//
 		CreationCard c = f.createCreationCard();
-		c.setName("Construcion d'une pièce");
+		c.setName("Construcion d'une piï¿½ce");
 		c.setUnique(true);
 
 		Creation c1 = f.createCreation();

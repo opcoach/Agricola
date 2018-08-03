@@ -18,12 +18,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.bistiboy.agricola.impl.MParcelImpl#getType <em>Type</em>}</li>
  *   <li>{@link com.bistiboy.agricola.impl.MParcelImpl#getX <em>X</em>}</li>
  *   <li>{@link com.bistiboy.agricola.impl.MParcelImpl#getY <em>Y</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -257,7 +257,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (type: ");
 		result.append(type);
 		result.append(", x: ");

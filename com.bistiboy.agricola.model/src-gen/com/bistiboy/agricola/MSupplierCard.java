@@ -12,11 +12,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.bistiboy.agricola.MSupplierCard#getSupply <em>Supply</em>}</li>
  *   <li>{@link com.bistiboy.agricola.MSupplierCard#getBankSupply <em>Bank Supply</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.bistiboy.agricola.MAgricolaPackage#getSupplierCard()
  * @model
@@ -32,7 +32,7 @@ public interface MSupplierCard extends ActionCard {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Supply</em>' containment reference.
-	 * @see #setSupply(MSupply)
+	 * @see #setSupply(Supply)
 	 * @see com.bistiboy.agricola.MAgricolaPackage#getSupplierCard_Supply()
 	 * @model containment="true" required="true"
 	 * @generated
@@ -51,10 +51,7 @@ public interface MSupplierCard extends ActionCard {
 
 	/**
 	 * Returns the value of the '<em><b>Bank Supply</b></em>' containment reference list.
-
-	 
-	 * The list contents are of type {@link com.bistiboy.agricola.MSupply}. 
-	
+	 * The list contents are of type {@link com.bistiboy.agricola.Supply}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Bank Supply</em>' containment reference list isn't clear,

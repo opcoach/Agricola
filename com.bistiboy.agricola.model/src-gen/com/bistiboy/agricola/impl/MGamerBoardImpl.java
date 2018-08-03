@@ -23,10 +23,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.bistiboy.agricola.impl.MGamerBoardImpl#getParcels <em>Parcels</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -67,7 +67,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 	 */
 	public EList<Parcel> getParcels() {
 		if (parcels == null) {
-			parcels = new EObjectContainmentEList<Parcel>(Parcel.class, this, AgricolaPackage.GAMER_BOARD__PARCELS);
+			parcels = new EObjectContainmentEList<Parcel>(Parcel.class, this, MAgricolaPackage.GAMER_BOARD__PARCELS);
 		}
 		return parcels;
 	}
@@ -80,7 +80,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 	public int computeScore() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException(); 
+		throw new UnsupportedOperationException();
 	}
 
 	/**

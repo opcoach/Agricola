@@ -2,6 +2,12 @@
  */
 package com.bistiboy.agricola.impl;
 
+import com.bistiboy.agricola.ActionCard;
+import com.bistiboy.agricola.Agricola;
+import com.bistiboy.agricola.Creation;
+import com.bistiboy.agricola.CreationCard;
+import com.bistiboy.agricola.Gamer;
+import com.bistiboy.agricola.GamerBoard;
 import com.bistiboy.agricola.MActionCard;
 import com.bistiboy.agricola.MAgricola;
 import com.bistiboy.agricola.MAgricolaFactory;
@@ -15,9 +21,14 @@ import com.bistiboy.agricola.MParcel;
 import com.bistiboy.agricola.MRound;
 import com.bistiboy.agricola.MSupplierCard;
 import com.bistiboy.agricola.MSupply;
+import com.bistiboy.agricola.MainBoard;
+import com.bistiboy.agricola.Parcel;
 import com.bistiboy.agricola.ParcelType;
 
 import com.bistiboy.agricola.Resource;
+import com.bistiboy.agricola.Round;
+import com.bistiboy.agricola.SupplierCard;
+import com.bistiboy.agricola.Supply;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -155,7 +166,7 @@ public class MAgricolaPackageImpl extends EPackageImpl implements MAgricolaPacka
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link MAgricolaPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -169,7 +180,8 @@ public class MAgricolaPackageImpl extends EPackageImpl implements MAgricolaPacka
 		if (isInited) return (MAgricolaPackage)EPackage.Registry.INSTANCE.getEPackage(MAgricolaPackage.eNS_URI);
 
 		// Obtain or create and register package
-		MAgricolaPackageImpl theAgricolaPackage = (MAgricolaPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof MAgricolaPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new MAgricolaPackageImpl());
+		Object registeredAgricolaPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		MAgricolaPackageImpl theAgricolaPackage = registeredAgricolaPackage instanceof MAgricolaPackageImpl ? (MAgricolaPackageImpl)registeredAgricolaPackage : new MAgricolaPackageImpl();
 
 		isInited = true;
 
@@ -185,7 +197,6 @@ public class MAgricolaPackageImpl extends EPackageImpl implements MAgricolaPacka
 		// Mark meta-data to indicate it can't be changed
 		theAgricolaPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(MAgricolaPackage.eNS_URI, theAgricolaPackage);
 		return theAgricolaPackage;
@@ -648,56 +659,56 @@ public class MAgricolaPackageImpl extends EPackageImpl implements MAgricolaPacka
 		creationCardEClass.getESuperTypes().add(this.getActionCard());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(gamerBoardEClass, MGamerBoard.class, "GamerBoard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGamerBoard_Parcels(), this.getParcel(), null, "parcels", null, 0, -1, MGamerBoard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(gamerBoardEClass, GamerBoard.class, "GamerBoard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getGamerBoard_Parcels(), this.getParcel(), null, "parcels", null, 0, -1, GamerBoard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getGamerBoard__ComputeScore(), theXMLTypePackage.getInt(), "computeScore", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(parcelEClass, MParcel.class, "Parcel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getParcel_Type(), this.getParcelType(), "type", null, 0, 1, MParcel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getParcel_X(), theXMLTypePackage.getInt(), "x", null, 0, 1, MParcel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getParcel_Y(), theXMLTypePackage.getInt(), "y", null, 0, 1, MParcel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(parcelEClass, Parcel.class, "Parcel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getParcel_Type(), this.getParcelType(), "type", null, 0, 1, Parcel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getParcel_X(), theXMLTypePackage.getInt(), "x", null, 0, 1, Parcel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getParcel_Y(), theXMLTypePackage.getInt(), "y", null, 0, 1, Parcel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(gamerEClass, MGamer.class, "Gamer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGamer_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, MGamer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getGamer_Gamerboard(), this.getGamerBoard(), null, "gamerboard", null, 1, 1, MGamer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(gamerEClass, Gamer.class, "Gamer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getGamer_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, Gamer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGamer_Gamerboard(), this.getGamerBoard(), null, "gamerboard", null, 1, 1, Gamer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(agricolaEClass, MAgricola.class, "Agricola", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAgricola_Gamers(), this.getGamer(), null, "gamers", null, 1, 5, MAgricola.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAgricola_Cards(), this.getActionCard(), null, "cards", null, 0, -1, MAgricola.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAgricola_Mainboard(), this.getMainBoard(), null, "mainboard", null, 1, 1, MAgricola.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(agricolaEClass, Agricola.class, "Agricola", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAgricola_Gamers(), this.getGamer(), null, "gamers", null, 1, 5, Agricola.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgricola_Cards(), this.getActionCard(), null, "cards", null, 0, -1, Agricola.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgricola_Mainboard(), this.getMainBoard(), null, "mainboard", null, 1, 1, Agricola.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getAgricola__Start(), null, "start", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		EOperation op = initEOperation(getAgricola__Play__MGamer(), null, "play", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getGamer(), "g", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(actionCardEClass, MActionCard.class, "ActionCard", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getActionCard_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, MActionCard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(actionCardEClass, ActionCard.class, "ActionCard", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getActionCard_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, ActionCard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(supplierCardEClass, MSupplierCard.class, "SupplierCard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSupplierCard_Supply(), this.getSupply(), null, "supply", null, 1, 1, MSupplierCard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSupplierCard_BankSupply(), this.getSupply(), null, "bankSupply", null, 0, -1, MSupplierCard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(supplierCardEClass, SupplierCard.class, "SupplierCard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSupplierCard_Supply(), this.getSupply(), null, "supply", null, 1, 1, SupplierCard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSupplierCard_BankSupply(), this.getSupply(), null, "bankSupply", null, 0, -1, SupplierCard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(creationCardEClass, MCreationCard.class, "CreationCard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCreationCard_Creations(), this.getCreation(), null, "creations", null, 1, -1, MCreationCard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCreationCard_Unique(), theXMLTypePackage.getBoolean(), "unique", null, 0, 1, MCreationCard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(creationCardEClass, CreationCard.class, "CreationCard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCreationCard_Creations(), this.getCreation(), null, "creations", null, 1, -1, CreationCard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCreationCard_Unique(), theXMLTypePackage.getBoolean(), "unique", null, 0, 1, CreationCard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(supplyEClass, MSupply.class, "Supply", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSupply_Quantity(), theXMLTypePackage.getInt(), "quantity", null, 0, 1, MSupply.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSupply_ResourceType(), this.getResource(), "resourceType", null, 0, 1, MSupply.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(supplyEClass, Supply.class, "Supply", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSupply_Quantity(), theXMLTypePackage.getInt(), "quantity", null, 0, 1, Supply.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSupply_ResourceType(), this.getResource(), "resourceType", null, 0, 1, Supply.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(creationEClass, MCreation.class, "Creation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCreation_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, MCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCreation_Cost(), this.getSupply(), null, "cost", null, 0, -1, MCreation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(creationEClass, Creation.class, "Creation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCreation_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, Creation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCreation_Cost(), this.getSupply(), null, "cost", null, 0, -1, Creation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(mainBoardEClass, MMainBoard.class, "MainBoard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMainBoard_FixedCards(), this.getActionCard(), null, "fixedCards", null, 10, 16, MMainBoard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMainBoard_Rounds(), this.getRound(), null, "rounds", null, 1, 14, MMainBoard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(mainBoardEClass, MainBoard.class, "MainBoard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMainBoard_FixedCards(), this.getActionCard(), null, "fixedCards", null, 10, 16, MainBoard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMainBoard_Rounds(), this.getRound(), null, "rounds", null, 1, 14, MainBoard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(roundEClass, MRound.class, "Round", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRound_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, MRound.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRound_Actioncard(), this.getActionCard(), null, "actioncard", null, 0, -1, MRound.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(roundEClass, Round.class, "Round", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRound_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, Round.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRound_Actioncard(), this.getActionCard(), null, "actioncard", null, 0, -1, Round.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(parcelTypeEEnum, ParcelType.class, "ParcelType");
