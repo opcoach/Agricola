@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.ecp.view.model.provider.xmi.file">
+<file filePath="viewmodels/Round.view"/>
+
+<file filePath="viewmodels/MainBoard.view"/>
+
+<file filePath="viewmodels/Creation.view"/>
+
+<file filePath="viewmodels/Supply.view"/>
+
+<file filePath="viewmodels/CreationCard.view"/>
+
+<file filePath="viewmodels/SupplierCard.view"/>
+
+<file filePath="viewmodels/Agricola.view"/>
+
+<file filePath="viewmodels/Gamer.view"/>
+
+<file filePath="viewmodels/Parcel.view"/>
+
+<file filePath="viewmodels/GamerBoard.view"/>
+
+   </extension>
+
+</plugin>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.eclipse.emf.ecp.view.model:View xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.emf.ecp.view.horizontal.model="http://org/eclipse/emf/ecp/view/horizontal/model" xmlns:org.eclipse.emf.ecp.view.model="http://org/eclipse/emf/ecp/view/model/1170" xmlns:org.eclipse.emf.ecp.view.vertical.model="http://org/eclipse/emf/ecp/view/vertical/model" xmi:id="_hy76sJb_EeinMPd35eUCIw" name="Agricola">
+  <rootEClass href="http://com.bistiboy.agricola/1.0#//Agricola"/>
+  <children xsi:type="org.eclipse.emf.ecp.view.vertical.model:VerticalLayout" xmi:id="_xJX5MJb_EeinMPd35eUCIw">
+    <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_hy--BJb_EeinMPd35eUCIw" name="Control mainboard">
+      <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_hy--BZb_EeinMPd35eUCIw">
+        <domainModelEFeature xsi:type="ecore:EReference" href="http://com.bistiboy.agricola/1.0#//Agricola/mainboard"/>
+      </domainModelReference>
+    </children>
+    <children xsi:type="org.eclipse.emf.ecp.view.horizontal.model:HorizontalLayout" xmi:id="_-4etgJb_EeinMPd35eUCIw">
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-4etgZb_EeinMPd35eUCIw" name="Control gamers">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-4etgpb_EeinMPd35eUCIw">
+          <domainModelEFeature xsi:type="ecore:EReference" href="http://com.bistiboy.agricola/1.0#//Agricola/gamers"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-4etg5b_EeinMPd35eUCIw" name="Control cards">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-4ethJb_EeinMPd35eUCIw">
+          <domainModelEFeature xsi:type="ecore:EReference" href="http://com.bistiboy.agricola/1.0#//Agricola/cards"/>
+        </domainModelReference>
+      </children>
+    </children>
+  </children>
+  <ecorePaths>/com.bistiboy.agricola.model/model/agricola.ecore</ecorePaths>
+</org.eclipse.emf.ecp.view.model:View>

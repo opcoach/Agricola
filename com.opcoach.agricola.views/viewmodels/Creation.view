@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.eclipse.emf.ecp.view.model:View xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.emf.ecp.view.model="http://org/eclipse/emf/ecp/view/model/1170" xmi:id="_hzQq0Jb_EeinMPd35eUCIw" name="Creation">
+  <rootEClass href="http://com.bistiboy.agricola/1.0#//Creation"/>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_hzSgAJb_EeinMPd35eUCIw" name="Control name">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_hzSgAZb_EeinMPd35eUCIw">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://com.bistiboy.agricola/1.0#//Creation/name"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_hzSgApb_EeinMPd35eUCIw" name="Control cost">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_hzSgA5b_EeinMPd35eUCIw">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://com.bistiboy.agricola/1.0#//Creation/cost"/>
+    </domainModelReference>
+  </children>
+  <ecorePaths>/com.bistiboy.agricola.model/model/agricola.ecore</ecorePaths>
+</org.eclipse.emf.ecp.view.model:View>
