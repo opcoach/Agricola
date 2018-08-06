@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated agricola -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="com.bistiboy.agricola.presentation.AgricolaModelWizardID"
+            name="%_UI_AgricolaModelWizard_label"
+            class="com.bistiboy.agricola.presentation.AgricolaModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AgricolaModelFile.gif">
+         <description>%_UI_AgricolaModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated agricola -->
+      <editor
+            id="com.bistiboy.agricola.presentation.AgricolaEditorID"
+            name="%_UI_AgricolaEditor_label"
+            icon="icons/full/obj16/AgricolaModelFile.gif"
+            extensions="agricola"
+            class="com.bistiboy.agricola.presentation.AgricolaEditor"
+            contributorClass="com.bistiboy.agricola.presentation.AgricolaActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
