@@ -4,5 +4,6 @@
     <elements xsi:type="basic:PartDescriptor" xmi:id="_xZ8PUJcAEeinMPd35eUCIw" elementId="com.opcoach.agricola.ui.partdescriptor.agricolagame" label="AgricolaGame" contributionURI="bundleclass://com.opcoach.agricola.ui/com.opcoach.agricola.ui.parts.AgricolaPart">
       <tags>View</tags>
     </elements>
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_TK860Jm2Eei0Qu9iw0qnQg" elementId="com.opcoach.agricola.ui.agricolaFormPart" label="Editor" allowMultiple="true" contributionURI="bundleclass://com.opcoach.agricola.ui/com.opcoach.agricola.ui.parts.AgricolaFormPart"/>
   </fragments>
 </fragment:ModelFragments>

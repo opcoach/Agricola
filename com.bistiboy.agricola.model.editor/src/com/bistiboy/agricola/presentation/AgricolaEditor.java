@@ -27,8 +27,13 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.eclipse.e4.ui.model.application.ui.basic.MPart;
+import org.eclipse.e4.ui.model.application.ui.basic.MPartStack;
+import org.eclipse.e4.ui.model.application.ui.basic.MStackElement;
+import org.eclipse.e4.ui.model.application.ui.basic.MWindow;
+import org.eclipse.e4.ui.workbench.modeling.EModelService;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
-import org.eclipse.e4.ui.workbench.modeling.EPartService.PartState;
 import org.eclipse.emf.common.command.BasicCommandStack;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
@@ -124,6 +129,8 @@ import org.eclipse.ui.views.properties.PropertySheet;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 
 import com.bistiboy.agricola.provider.AgricolaItemProviderAdapterFactory;
+import com.opcoach.agricola.ui.parts.AgricolaFormPart;
+
 
 
 /**
@@ -1009,6 +1016,21 @@ public class AgricolaEditor
 				selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 				selectionViewer.setInput(editingDomain.getResourceSet());
 				selectionViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
+				selectionViewer.addDoubleClickListener((event)-> {
+					System.out.println("Enter in Double Click for selected tree");
+					// Open corresponding Editor with current selection
+					ISelection isel = event.getSelection();
+					if (isel instanceof IStructuredSelection)
+					{
+						Object selected = ((IStructuredSelection) isel).getFirstElement();
+						if (selected instanceof EObject)
+						{
+							showE4Editor((EObject) selected);
+
+						}
+					}
+				
+				});
 				viewerPane.setTitle(editingDomain.getResourceSet());
 
 				new AdapterFactoryTreeEditor(selectionViewer.getTree(), adapterFactory);
@@ -1091,6 +1113,10 @@ public class AgricolaEditor
 				treeViewer = (TreeViewer)viewerPane.getViewer();
 				treeViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
 				treeViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+
+				
+				// Modif OP. 
+				treeViewer.addDoubleClickListener((event) -> System.out.println("Double click on tree"));
 
 				new AdapterFactoryTreeEditor(treeViewer.getTree(), adapterFactory);
 
@@ -1217,6 +1243,35 @@ public class AgricolaEditor
 					 updateProblemIndication();
 				 }
 			 });
+	}
+
+	private void showE4Editor(EObject selected) {
+		System.out.println("Open the E4 editor");
+		EPartService ps = PlatformUI.getWorkbench().getService(EPartService.class);
+		EModelService ms = PlatformUI.getWorkbench().getService(EModelService.class);
+		MWindow win = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getService(MWindow.class);
+		IEclipseContext ctx = PlatformUI.getWorkbench().getService(IEclipseContext.class);
+		ctx.set(AgricolaFormPart.FORM_PART_EDITOR_PARAM, selected);
+		// Must add this editor in the bottomRight part stack
+		MPartStack mps = (MPartStack) ms.find("bottomRight", win);
+		// Check if this part already exists for this object
+
+		String selectedKey = selected.toString();
+		MPart p = null;
+		for (MStackElement selt : mps.getChildren()) {
+			if (selt instanceof MPart && selt.getElementId().equals(selectedKey)) {
+				p = (MPart) selt;
+				break;
+			}
+
+		}
+		if (p == null) {
+			p = ps.createPart("com.opcoach.agricola.ui.agricolaFormPart");
+			p.setElementId(selected.toString());
+			mps.getChildren().add(p);
+		}
+
+		ps.activate(p);
 	}
 	
 	
