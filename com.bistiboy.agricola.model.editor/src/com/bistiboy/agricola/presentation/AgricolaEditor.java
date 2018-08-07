@@ -80,6 +80,7 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.jface.util.LocalSelectionTransfer;
 import org.eclipse.jface.viewers.ColumnWeightData;
+import org.eclipse.jface.viewers.IBaseLabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
@@ -992,6 +993,7 @@ public class AgricolaEditor
 		if (!getEditingDomain().getResourceSet().getResources().isEmpty()) {
 			// Create a page for the selection tree view.
 			//
+			AdapterFactoryLabelProvider labelProvider = new AdapterFactoryLabelProvider(adapterFactory);
 			{
 				ViewerPane viewerPane =
 					new ViewerPane(getSite().getPage(), AgricolaEditor.this) {
@@ -1013,7 +1015,7 @@ public class AgricolaEditor
 				selectionViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
 				selectionViewer.setUseHashlookup(true);
 
-				selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+				selectionViewer.setLabelProvider(labelProvider);
 				selectionViewer.setInput(editingDomain.getResourceSet());
 				selectionViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
 				selectionViewer.addDoubleClickListener((event)-> {
@@ -1025,12 +1027,13 @@ public class AgricolaEditor
 						Object selected = ((IStructuredSelection) isel).getFirstElement();
 						if (selected instanceof EObject)
 						{
-							showE4Editor((EObject) selected);
+							showE4Editor((EObject) selected,labelProvider);
 
 						}
 					}
 				
 				});
+				selectionViewer.expandAll();
 				viewerPane.setTitle(editingDomain.getResourceSet());
 
 				new AdapterFactoryTreeEditor(selectionViewer.getTree(), adapterFactory);
@@ -1062,7 +1065,7 @@ public class AgricolaEditor
 				parentViewer = (TreeViewer)viewerPane.getViewer();
 				parentViewer.setAutoExpandLevel(30);
 				parentViewer.setContentProvider(new ReverseAdapterFactoryContentProvider(adapterFactory));
-				parentViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+				parentViewer.setLabelProvider(labelProvider);
 
 				createContextMenuFor(parentViewer);
 				int pageIndex = addPage(viewerPane.getControl());
@@ -1087,7 +1090,7 @@ public class AgricolaEditor
 				viewerPane.createControl(getContainer());
 				listViewer = (ListViewer)viewerPane.getViewer();
 				listViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-				listViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+				listViewer.setLabelProvider(labelProvider);
 
 				createContextMenuFor(listViewer);
 				int pageIndex = addPage(viewerPane.getControl());
@@ -1112,7 +1115,7 @@ public class AgricolaEditor
 				viewerPane.createControl(getContainer());
 				treeViewer = (TreeViewer)viewerPane.getViewer();
 				treeViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-				treeViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+				treeViewer.setLabelProvider(labelProvider);
 
 				
 				// Modif OP. 
@@ -1161,7 +1164,7 @@ public class AgricolaEditor
 
 				tableViewer.setColumnProperties(new String [] {"a", "b"});
 				tableViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-				tableViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+				tableViewer.setLabelProvider(labelProvider);
 
 				createContextMenuFor(tableViewer);
 				int pageIndex = addPage(viewerPane.getControl());
@@ -1204,7 +1207,7 @@ public class AgricolaEditor
 
 				treeViewerWithColumns.setColumnProperties(new String [] {"a", "b"});
 				treeViewerWithColumns.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-				treeViewerWithColumns.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+				treeViewerWithColumns.setLabelProvider(labelProvider);
 
 				createContextMenuFor(treeViewerWithColumns);
 				int pageIndex = addPage(viewerPane.getControl());
@@ -1245,7 +1248,7 @@ public class AgricolaEditor
 			 });
 	}
 
-	private void showE4Editor(EObject selected) {
+	private void showE4Editor(EObject selected, AdapterFactoryLabelProvider labelProvider) {
 		System.out.println("Open the E4 editor");
 		IEclipseContext ctx = PlatformUI.getWorkbench().getService(IEclipseContext.class);
 		//EPartService ps = PlatformUI.getWorkbench().getService(EPartService.class);
@@ -1269,8 +1272,9 @@ public class AgricolaEditor
 			}
 			mps.getChildren().add(p);
 		}
-
+		
 		ps.activate(p);
+		p.setLabel(labelProvider.getText(selected));
 	}
 	
 	
