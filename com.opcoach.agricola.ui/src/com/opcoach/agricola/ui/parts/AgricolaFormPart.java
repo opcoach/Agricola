@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecp.ui.view.ECPRendererException;
 import org.eclipse.emf.ecp.ui.view.swt.ECPSWTViewRenderer;
@@ -14,12 +15,13 @@ import org.eclipse.swt.widgets.Composite;
 public class AgricolaFormPart
 {
 	public static final String FORM_PART_EDITOR_PARAM = "com.opcoach.agricola.ui.parts.AgricolaFormPart.Selection" ;
-public static final String PART_ID = "com.opcoach.agricola.ui.agricolaFormPart"; // used in fragment to get the part descriptor
+	public static final String PART_ID = "com.opcoach.agricola.ui.agricolaFormPart"; // used in fragment to get the part descriptor
 	private EObject o;
 
 	@Inject
-	public AgricolaFormPart(@Optional @Named(FORM_PART_EDITOR_PARAM)EObject selected) {
+	public AgricolaFormPart(@Optional @Named(FORM_PART_EDITOR_PARAM)EObject selected, MPart part) {
 		System.out.println("Selection recue : " + selected);
+		part.setLabel(selected.eClass().getName());
 		o = selected;
 	}
 
