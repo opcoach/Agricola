@@ -14,7 +14,7 @@ import org.eclipse.swt.widgets.Composite;
 public class AgricolaFormPart
 {
 	public static final String FORM_PART_EDITOR_PARAM = "com.opcoach.agricola.ui.parts.AgricolaFormPart.Selection" ;
-
+public static final String PART_ID = "com.opcoach.agricola.ui.agricolaFormPart"; // used in fragment to get the part descriptor
 	private EObject o;
 
 	@Inject

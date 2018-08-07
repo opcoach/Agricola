@@ -1247,27 +1247,26 @@ public class AgricolaEditor
 
 	private void showE4Editor(EObject selected) {
 		System.out.println("Open the E4 editor");
-		EPartService ps = PlatformUI.getWorkbench().getService(EPartService.class);
-		EModelService ms = PlatformUI.getWorkbench().getService(EModelService.class);
-		MWindow win = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getService(MWindow.class);
 		IEclipseContext ctx = PlatformUI.getWorkbench().getService(IEclipseContext.class);
-		ctx.set(AgricolaFormPart.FORM_PART_EDITOR_PARAM, selected);
+		//EPartService ps = PlatformUI.getWorkbench().getService(EPartService.class);
+		EPartService ps = ctx.get(EPartService.class);
+		EModelService ms = ctx.get(EModelService.class);
+		MWindow win = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getService(MWindow.class);
+		
 		// Must add this editor in the bottomRight part stack
-		MPartStack mps = (MPartStack) ms.find("bottomRight", win);
 		// Check if this part already exists for this object
 
-		String selectedKey = selected.toString();
-		MPart p = null;
-		for (MStackElement selt : mps.getChildren()) {
-			if (selt instanceof MPart && selt.getElementId().equals(selectedKey)) {
-				p = (MPart) selt;
-				break;
-			}
+		String selectedKey = "editor"+selected.hashCode();
+		MPart p = (MPart) ms.find(selectedKey, win);
 
-		}
 		if (p == null) {
-			p = ps.createPart("com.opcoach.agricola.ui.agricolaFormPart");
-			p.setElementId(selected.toString());
+			ctx.set(AgricolaFormPart.FORM_PART_EDITOR_PARAM, selected);
+			p = ps.createPart(AgricolaFormPart.PART_ID);
+			p.setElementId(selectedKey);
+			MPartStack mps = (MPartStack) ms.find("bottomRight", win);
+			if(mps == null) {
+				mps = (MPartStack) ms.find("org.eclipse.e4.primaryDataStack", win);	
+			}
 			mps.getChildren().add(p);
 		}
 
